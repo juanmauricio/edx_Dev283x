@@ -1,8 +1,8 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const logger = require('morgan');
-const errorhandler = require('errorhandler');
-const routes = require('./routes/index.js');
+var express = require('express');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
+var errorhandler = require('errorhandler');
+var routes = require('./routes/index.js');
 
 let app = express();
 
@@ -49,5 +49,7 @@ app.post('/posts/:postId/comments', routes.comments.addComment);
 app.put('/posts/:postId/comments/:commentId', routes.comments.updateComment);
 app.delete('/posts/:postId/comments/:commentId', routes.comments.removeComment);
 
-app.listen(port);
+app.listen(port, function(){
+    console.log("server running at: " + port)
+});
 

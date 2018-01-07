@@ -1,6 +1,6 @@
-const fs = require('fs')
-const path = require('path')
-const csv = require('csvtojson')
+var fs = require('fs')
+var path = require('path')
+var csv = require('csvtojson')
 
 const convertCSVToJSON = (filename = '') => {
     console.log('started...');
